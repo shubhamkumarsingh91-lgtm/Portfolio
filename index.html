@@ -37,21 +37,24 @@
   /* ---------- background layers ---------- */
   #particles-js{
     position:fixed;inset:0;z-index:0;
-    background:radial-gradient(ellipse at 20% 20%, #12163a 0%, transparent 55%),
-               radial-gradient(ellipse at 80% 70%, #2a1240 0%, transparent 55%),
-               radial-gradient(ellipse at 50% 100%, #0a1a2e 0%, transparent 60%),
+    background:radial-gradient(ellipse at 20% 20%, #0c1f22 0%, transparent 55%),
+               radial-gradient(ellipse at 80% 70%, #0a2230 0%, transparent 55%),
+               radial-gradient(ellipse at 50% 100%, #081a1e 0%, transparent 60%),
                var(--void);
   }
+  #ecg-watermark{
+    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.05;
+  }
   .nebula{
-    position:fixed;inset:0;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0.55;
+    position:fixed;inset:0;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0.4;
   }
   .nebula span{
-    position:absolute;border-radius:50%;filter:blur(90px);
+    position:absolute;border-radius:50%;filter:blur(100px);
     animation:drift 26s ease-in-out infinite alternate;
   }
-  .nebula span:nth-child(1){width:420px;height:420px;background:#5b2ad6;top:-100px;left:-80px;}
+  .nebula span:nth-child(1){width:420px;height:420px;background:#0f5c52;top:-100px;left:-80px;}
   .nebula span:nth-child(2){width:380px;height:380px;background:#0891b2;bottom:-120px;right:-60px;animation-delay:4s;}
-  .nebula span:nth-child(3){width:300px;height:300px;background:#c026d3;top:40%;left:60%;animation-delay:9s;}
+  .nebula span:nth-child(3){width:300px;height:300px;background:#12704a;top:40%;left:60%;animation-delay:9s;}
   @keyframes drift{
     0%{transform:translate(0,0) scale(1);}
     100%{transform:translate(40px,-50px) scale(1.15);}
@@ -75,7 +78,7 @@
   #boot .term .cursor-bar{display:inline-block;width:8px;height:14px;background:var(--green);animation:blink 1s step-end infinite;vertical-align:middle;}
   @keyframes blink{50%{opacity:0;}}
   #boot .bar-track{width:100%;height:3px;background:#161b33;margin-top:18px;border-radius:2px;overflow:hidden;}
-  #boot .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--magenta));animation:load 2.6s ease forwards;}
+  #boot .bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--green));animation:load 3.3s ease forwards;}
   @keyframes load{to{width:100%;}}
 
   /* ---------- layout helpers ---------- */
@@ -259,6 +262,14 @@
 </div>
 
 <div id="particles-js"></div>
+<svg id="ecg-watermark" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="ecgPattern" width="300" height="120" patternUnits="userSpaceOnUse">
+      <polyline points="0,60 60,60 75,60 85,15 100,105 115,60 300,60" fill="none" stroke="#39ff9d" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#ecgPattern)"/>
+</svg>
 <div class="nebula"><span></span><span></span><span></span></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
@@ -398,7 +409,11 @@
       <ul>
         <li>Bridge between state business owners, the System Integrator, and module vendors on the AMMIS modularity program, improving system interoperability/scalability by 40%.</li>
         <li>Own requirements traceability (RTM) from RFP through go-live; reviewed 100+ deliverables across 6+ vendor and state teams.</li>
+        <li>Perform functional analysis and document analysis on the CPMS module, translating procurement requirements into RFP language and contract requirement drafting support.</li>
         <li>Partner with the Agency's internal AI team on Program Integrity and fraud/abuse detection, defining PHI-exclusion guardrails for AI-facing systems.</li>
+        <li>Mentor newer business analysts on artifact quality and stakeholder management; drove 95% on-time action item closure across Change Control Board design sessions.</li>
+        <li>Built Power BI, Azure, and Snowflake dashboards that cut reporting turnaround time by 25% for CMS/federal reporting (MAR, SUR, DUR).</li>
+        <li>Act as Agency-side liaison between ServiceNow and Optum's Jira environment, aligning incident, change, request, and defect management across systems.</li>
       </ul>
     </div>
     <div class="t-item reveal">
@@ -407,7 +422,10 @@
       <div class="t-loc">Atlanta, GA</div>
       <ul>
         <li>Integrated legacy PBM systems into the FlexRx platform for New Mexico Medicaid, improving operational efficiency 40%.</li>
+        <li>Authored PBM business rules for Provider, Member, Therapeutic Class, Managed Care, Prior Authorization, and DUR, translating state pharmacy policy into configurable adjudication logic.</li>
         <li>Led gap analysis and source-to-target mapping, cutting downstream development errors 25%.</li>
+        <li>Supported UAT test case design and defect triage across adjudication scenarios, contributing to a 20% improvement in system performance at go-live.</li>
+        <li>Managed the Azure DevOps backlog across Agile sprints and Waterfall release tracks, improving business/technology alignment by 50%.</li>
       </ul>
     </div>
     <div class="t-item reveal">
@@ -417,10 +435,19 @@
       <ul>
         <li>Designed a MySQL data warehouse and daily Tableau dashboards for product leadership.</li>
         <li>Launched A/B testing frameworks contributing to a 15% increase in app user retention.</li>
+        <li>Standardized reporting templates and built Excel macros, cutting report turnaround time by 35%.</li>
+        <li>Consolidated overlapping product features through capability and process analysis, reducing development cost by 25%.</li>
       </ul>
     </div>
   </div>
 </section>
+
+<div class="ecg-divider" aria-hidden="true">
+  <svg viewBox="0 0 600 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,23 40,23 55,23 65,4 75,42 85,23 100,23 140,23 155,23 165,4 175,42 185,23 200,23 240,23 255,23 265,4 275,42 285,23 300,23 340,23 355,23 365,4 375,42 385,23 400,23 440,23 455,23 465,4 475,42 485,23 500,23 540,23 555,23 565,4 575,42 585,23 600,23"
+      fill="none" stroke="#39ff9d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
 
 <section id="systems">
   <div class="eyebrow">Core Systems</div>
@@ -479,7 +506,7 @@
   <div class="eyebrow" style="justify-content:center;">Open Channel</div>
   <h2 class="section-title reveal" style="text-align:center;">Let's <span class="glow-text">Deploy Something Together</span></h2>
   <div class="contact-panel reveal">
-    <p style="color:var(--text-dim);position:relative;z-index:2;">Open to Senior Business Analyst / Business Systems Analyst roles across India and the US &mdash; remote-first, relocation-ready.</p>
+    <p style="color:var(--text-dim);position:relative;z-index:2;">Open to Senior Business Analyst / Business Systems Analyst roles across the USA &mdash; remote-first, relocation-ready.</p>
     <div class="contact-links">
       <a href="mailto:shubhamkrsingh0801@gmail.com">EMAIL</a>
       <a href="tel:+19842681351">+1 (984) 268-1351</a>
@@ -489,25 +516,25 @@
   </div>
 </section>
 
-<footer>SHUBHAM SINGH // AGENT.SYS &mdash; BUILT AND DEPLOYED FROM EARTH, OPEN TO ANY GALAXY</footer>
+<footer>SHUBHAM SINGH // AGENT.SYS &mdash; MONITORING BUSINESS ANALYSIS + HEALTHCARE AI, 24/7</footer>
 
 <script>
   // particle network background
   if (window.particlesJS) {
     particlesJS('particles-js', {
       particles: {
-        number: { value: 90, density: { enable: true, value_area: 900 } },
-        color: { value: ['#3df6ff','#b26bff','#ffffff'] },
+        number: { value: 34, density: { enable: true, value_area: 900 } },
+        color: { value: ['#39ff9d','#3df6ff','#ffffff'] },
         shape: { type: 'circle' },
-        opacity: { value: 0.6, random: true },
+        opacity: { value: 0.45, random: true },
         size: { value: 2, random: true },
-        line_linked: { enable: true, distance: 130, color: '#22284a', opacity: 0.5, width: 1 },
-        move: { enable: true, speed: 0.6, random: true, out_mode: 'out' }
+        line_linked: { enable: true, distance: 120, color: '#1c3a2e', opacity: 0.35, width: 1 },
+        move: { enable: true, speed: 0.4, random: true, out_mode: 'out' }
       },
       interactivity: {
         detect_on: 'window',
-        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
-        modes: { grab: { distance: 140, line_linked: { opacity: 0.7 } }, push: { particles_nb: 3 } }
+        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: false }, resize: true },
+        modes: { grab: { distance: 120, line_linked: { opacity: 0.5 } } }
       },
       retina_detect: true
     });
@@ -523,9 +550,10 @@
   const lines = [
     'BOOTING AGENT.SYS v2.1 ...',
     'LOADING PROFILE :: SHUBHAM_SINGH.dat',
-    'MOUNTING MODULES :: BUSINESS_ANALYSIS // AI_SYSTEMS',
+    'MOUNTING MODULES :: MEDICAID_BA // HEALTHCARE_AI',
+    'SYNCING VITALS FEED :: SYSTEMS NOMINAL',
     'VERIFYING CREDENTIALS :: PMP [OK]  IBM_DS [OK]',
-    'ESTABLISHING UPLINK ... READY'
+    'DIAGNOSTIC SCAN COMPLETE ... AGENT ONLINE'
   ];
   const bootLines = document.getElementById('bootLines');
   let li = 0;
@@ -542,10 +570,10 @@
     }, 14);
   }
   typeLine();
-  setTimeout(()=>{ document.getElementById('boot').classList.add('hide'); }, 2700);
+  setTimeout(()=>{ document.getElementById('boot').classList.add('hide'); }, 3400);
 
   // typed role cycler
-  const roles = ['AI & Data Systems Builder', 'Medicaid Modernization Specialist', 'Applied GenAI / RAG Engineer', 'PMP-Certified Program Analyst'];
+  const roles = ['Healthcare AI Systems Builder', 'Medicaid Modernization Specialist', 'Applied GenAI / RAG Engineer', 'PMP-Certified Program Analyst'];
   const typedEl = document.getElementById('typed');
   let r = 0, c = 0, deleting = false;
   function cycle(){
