@@ -4,171 +4,213 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shubham Singh | Senior Business Analyst, Medicaid and Healthcare AI</title>
-<meta name="description" content="Senior Business Analyst with 5+ years in Medicaid, PBM and healthcare payer systems. PMP. Builds and tests AI tools for compliance and claims work.">
+<meta name="description" content="Senior Business Analyst with 5+ years in Medicaid, pharmacy benefits and healthcare payer systems. PMP. Builds and tests AI tools for compliance work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f3f5f7;
+  --ink: #0d1828;
+  --ink-2: #14233a;
+  --ink-line: #24364f;
+  --frost: #e9edf2;
+  --frost-dim: #9fadc0;
+  --gold: #c9a45c;
+  --paper: #f1f3f6;
   --surface: #ffffff;
-  --ink: #17212f;
-  --muted: #566173;
-  --rule: #d8dee6;
-  --accent: #1f6b5c;
-  --accent-soft: #e4f0ec;
-  --focus: #1f6b5c;
-  --measure: 66ch;
+  --text: #16202e;
+  --muted: #586374;
+  --rule: #d6dce4;
+  --pine: #1d6a5b;
+  --del: #a3392f;
+  --del-bg: #f8e7e4;
+  --ins: #1d6a5b;
+  --ins-bg: #e1f0ea;
+  --measure: 64ch;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #121820; --surface: #19212c; --ink: #e8edf3; --muted: #a3aebd;
-    --rule: #2c3644; --accent: #6cc4ad; --accent-soft: #1d322e; --focus: #6cc4ad;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #121820; --surface: #19212c; --ink: #e8edf3; --muted: #a3aebd;
-  --rule: #2c3644; --accent: #6cc4ad; --accent-soft: #1d322e; --focus: #6cc4ad;
-}
-
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 17px; line-height: 1.6; font-feature-settings: "tnum" 1;
-}
-a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover { text-decoration-thickness: 2px; }
-:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-.skip { position: absolute; left: -999px; top: 8px; background: var(--surface); padding: 8px 12px; z-index: 10; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 70px; }
+body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+.skip { position: absolute; left: -999px; top: 8px; background: #fff; color: var(--ink); padding: 8px 12px; z-index: 20; }
 .skip:focus { left: 8px; }
 
-/* Header */
-header.top {
-  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule);
+/* ---------- Dark opening ---------- */
+.dark { background: var(--ink); color: var(--frost); position: relative; overflow: hidden; }
+.dark::before {                       /* ledger-paper grid, barely there */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--ink-line) 1px, transparent 1px), linear-gradient(90deg, var(--ink-line) 1px, transparent 1px);
+  background-size: 64px 64px; opacity: .28;
+  -webkit-mask-image: radial-gradient(ellipse at 30% 20%, #000 0%, transparent 75%); mask-image: radial-gradient(ellipse at 30% 20%, #000 0%, transparent 75%);
 }
-header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
-.brand { font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
-nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
-nav a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
-nav a:hover { color: var(--ink); }
+.top { position: sticky; top: 0; z-index: 10; background: rgba(13, 24, 40, .86); backdrop-filter: blur(8px); border-bottom: 1px solid var(--ink-line); color: var(--frost); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+.mark { font-family: var(--display); font-size: 22px; text-decoration: none; letter-spacing: .01em; }
+.top nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+.top nav a { color: var(--frost-dim); text-decoration: none; font-size: 15px; }
+.top nav a:hover { color: var(--frost); }
 
-/* Hero */
-.hero { padding-top: 72px; padding-bottom: 56px; }
+.hero { position: relative; padding-top: 88px; padding-bottom: 40px; }
 .hero h1 {
-  font-size: clamp(40px, 6.4vw, 68px); line-height: 1.02; letter-spacing: -0.035em;
-  font-weight: 800; margin: 0 0 18px;
+  font-family: var(--display); font-weight: 400; font-size: clamp(64px, 11.5vw, 156px);
+  line-height: .92; letter-spacing: -.02em; margin: 0; color: #f6f3ec;
 }
-.hero .role { font-size: clamp(19px, 2.2vw, 23px); font-weight: 500; margin: 0 0 18px; max-width: 34ch; line-height: 1.35; }
-.hero .intro { color: var(--muted); max-width: var(--measure); margin: 0 0 26px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
-.btn {
-  display: inline-block; padding: 11px 18px; border-radius: 6px; font-weight: 600; font-size: 15px;
-  text-decoration: none; border: 1.5px solid var(--accent);
-}
-.btn.primary { background: var(--accent); color: var(--surface); }
-.btn.secondary { color: var(--accent); background: transparent; }
-.meta { color: var(--muted); font-size: 15px; margin-top: 18px; }
+.hero h1 .l2 { display: block; padding-left: .55em; font-style: italic; }
+.hero .rule { width: 120px; height: 1px; background: var(--gold); margin: 34px 0 26px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: end; }
+.hero .role { font-size: clamp(20px, 2.3vw, 26px); line-height: 1.35; margin: 0; color: #f6f3ec; max-width: 30ch; }
+.hero .intro { color: var(--frost-dim); margin: 0 0 22px; max-width: 52ch; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--gold); color: var(--gold); }
+.btn.solid { background: var(--gold); color: var(--ink); }
+.btn:hover { filter: brightness(1.08); }
+.where { margin-top: 18px; font-size: 14px; color: var(--frost-dim); }
 
-/* The traceability matrix: the one memorable element */
-.trace {
-  margin-top: 48px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+/* ---------- The trace board ---------- */
+.board { position: relative; padding-top: 56px; padding-bottom: 96px; }
+.board h2 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; margin: 0 0 10px; color: #f6f3ec; }
+.board .sub { color: var(--frost-dim); margin: 0 0 40px; max-width: 58ch; }
+.trace { position: relative; display: grid; grid-template-columns: 1fr 1.25fr; gap: 0 140px; }
+.trace svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.trace path { fill: none; stroke: var(--gold); stroke-width: 1.2; opacity: .32; transition: opacity .35s ease, stroke-width .35s ease; }
+.trace path.on { opacity: 1; stroke-width: 1.8; }
+.trace.focused path:not(.on) { opacity: .07; }
+.reqs, .evs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 1; }
+.reqs { justify-content: space-around; }
+.req {
+  width: 100%; text-align: left; font: inherit; color: var(--frost); cursor: pointer;
+  background: var(--ink-2); border: 1px solid var(--ink-line); border-radius: 12px; padding: 18px 20px;
+  display: grid; grid-template-columns: 34px 1fr; gap: 6px; align-items: baseline;
+  transition: border-color .25s ease, background .25s ease;
 }
-.trace-head { padding: 18px 24px 14px; border-bottom: 1px solid var(--rule); }
-.trace-head h2 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
-.trace-head p { margin: 0; color: var(--muted); font-size: 15px; }
-.trace table { width: 100%; border-collapse: collapse; }
-.trace th {
-  text-align: left; font-size: 14px; font-weight: 600; color: var(--muted);
-  padding: 10px 24px; background: var(--bg); border-bottom: 1px solid var(--rule);
-}
-.trace td { padding: 16px 24px; vertical-align: top; border-bottom: 1px solid var(--rule); }
-.trace tr:last-child td { border-bottom: 0; }
-.trace td.req { width: 34%; font-weight: 600; }
-.trace td.id { width: 64px; color: var(--accent); font-weight: 700; font-size: 15px; padding-right: 0; }
-.trace td.ev { color: var(--ink); }
-.trace td.ev a { white-space: nowrap; }
+.req .k { font-family: var(--display); font-style: italic; color: var(--gold); font-size: 20px; }
+.req .t { font-weight: 600; font-size: 17px; line-height: 1.35; }
+.req[aria-pressed="true"] { border-color: var(--gold); background: #1a2c47; }
+.ev { border-left: 1px solid var(--ink-line); padding: 6px 0 6px 20px; transition: opacity .3s ease, border-color .3s ease; }
+.ev h3 { margin: 0; font-size: 16px; font-weight: 600; color: #f6f3ec; }
+.ev p { margin: 2px 0 0; font-size: 15px; color: var(--frost-dim); line-height: 1.5; }
+.trace.focused .ev { opacity: .32; }
+.trace.focused .ev.on { opacity: 1; border-left-color: var(--gold); }
+.hint { margin-top: 26px; font-size: 14px; color: var(--frost-dim); }
 
-/* Sections */
-section.block { padding: 64px 0; border-top: 1px solid var(--rule); }
-section.block > .wrap > h2 { font-size: clamp(26px, 3.2vw, 34px); letter-spacing: -0.025em; margin: 0 0 8px; line-height: 1.15; }
-.lede { color: var(--muted); max-width: var(--measure); margin: 0 0 32px; }
+/* ---------- Light document body ---------- */
+section.doc { padding: 96px 0; }
+section.doc + section.doc { border-top: 1px solid var(--rule); }
+.doc h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.04; margin: 0 0 14px; letter-spacing: -.01em; }
+.doc .lede { color: var(--muted); max-width: var(--measure); margin: 0 0 48px; font-size: 18px; }
 
-/* Projects */
-.projects { display: grid; gap: 22px; }
-.project { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 26px 28px; }
-.project.lead { border-color: var(--accent); }
-.project h3 { font-size: 22px; margin: 0 0 6px; letter-spacing: -0.015em; line-height: 1.25; }
-.project .stack { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
-.project dl { display: grid; grid-template-columns: 130px 1fr; gap: 10px 20px; margin: 0 0 16px; }
-.project dt { font-weight: 600; font-size: 15px; color: var(--muted); padding-top: 1px; }
-.project dd { margin: 0; max-width: var(--measure); }
-.project .links a { font-weight: 600; font-size: 15px; margin-right: 18px; }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.note {
-  margin-top: 26px; padding: 14px 18px; background: var(--accent-soft); border-radius: 8px;
-  font-size: 15px; max-width: 100%;
-}
+/* Featured project with live redline */
+.feature { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: start; }
+.feature h3 { font-family: var(--display); font-weight: 500; font-size: 32px; line-height: 1.12; margin: 0 0 8px; }
+.stack { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+.facts { margin: 0; }
+.facts dt { font-weight: 700; font-size: 15px; margin-top: 16px; }
+.facts dd { margin: 4px 0 0; max-width: var(--measure); }
+.facts .num { font-family: var(--display); font-size: 1.15em; }
+.links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.links a { font-weight: 600; color: var(--pine); font-size: 15px; }
 
-/* Experience timeline: a real sequence, so dates lead */
-.job { display: grid; grid-template-columns: 190px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
-.job:last-child { border-bottom: 0; }
-.job .when { color: var(--muted); font-size: 15px; font-weight: 500; }
-.job .when span { display: block; }
-.job h3 { margin: 0 0 2px; font-size: 20px; letter-spacing: -0.01em; }
-.job .org { margin: 0 0 12px; color: var(--muted); }
+.redline { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: 0 30px 60px -38px rgba(13, 24, 40, .45); overflow: hidden; }
+.rl-tabs { display: flex; border-bottom: 1px solid var(--rule); }
+.rl-tabs button { flex: 1; font: inherit; font-size: 15px; font-weight: 600; padding: 14px 10px; background: #f7f8fa; color: var(--muted); border: 0; cursor: pointer; border-bottom: 2px solid transparent; }
+.rl-tabs button[aria-selected="true"] { background: var(--surface); color: var(--text); border-bottom-color: var(--gold); }
+.rl-body { padding: 22px 24px 24px; }
+.rl-step { font-size: 14px; font-weight: 700; color: var(--muted); margin: 0 0 6px; }
+.rl-text { font-size: 15.5px; line-height: 1.6; margin: 0; }
+.rl-policy { padding: 12px 14px; background: #f7f8fa; border-radius: 8px; margin-bottom: 18px; }
+.rl-sop { padding: 14px; border: 1px dashed var(--rule); border-radius: 8px; min-height: 96px; }
+del { color: var(--del); background: var(--del-bg); text-decoration-thickness: 1.5px; padding: 0 2px; border-radius: 2px; }
+ins { color: var(--ins); background: var(--ins-bg); text-decoration: none; padding: 0 2px; border-radius: 2px; font-weight: 600; }
+.flags { list-style: none; padding: 0; margin: 14px 0 0; gap: 8px; }
+.flags li { font-size: 14px; padding: 9px 12px; border-left: 3px solid var(--gold); background: #faf6ec; border-radius: 0 6px 6px 0; }
+.run { margin-top: 16px; font: inherit; font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--ink); background: var(--ink); color: #fff; cursor: pointer; }
+.run[aria-pressed="true"] { background: transparent; color: var(--ink); }
+.rl-note { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
+.sop-after, .flags { display: none; }
+.redline.shown .sop-before { display: none; }
+.redline.shown .sop-after { display: block; }
+.redline.shown .flags { display: grid; }
+
+/* Other projects as an index */
+.index { margin-top: 80px; border-top: 1px solid var(--text); }
+.entry { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; padding: 34px 0; border-bottom: 1px solid var(--rule); }
+.entry h3 { font-family: var(--display); font-weight: 500; font-size: 28px; line-height: 1.15; margin: 0 0 6px; }
+.entry .stack { margin: 0; }
+.entry p { margin: 0 0 10px; max-width: var(--measure); }
+.entry .result { color: var(--muted); }
+.entry a { font-weight: 600; color: var(--pine); font-size: 15px; }
+.disclaimer { margin-top: 36px; font-size: 14.5px; color: var(--muted); max-width: 80ch; padding-left: 16px; border-left: 2px solid var(--gold); }
+
+/* Experience */
+.jobs { border-top: 1px solid var(--text); }
+.job { display: grid; grid-template-columns: 240px 1fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--rule); }
+.job .when { font-family: var(--display); font-size: 22px; line-height: 1.25; margin: 0; }
+.job .when span { display: block; font-family: var(--sans); font-size: 14px; color: var(--muted); margin-top: 6px; }
+.job h3 { margin: 0; font-size: 21px; }
+.job .org { margin: 2px 0 14px; color: var(--muted); }
 .job ul { margin: 0; padding-left: 20px; max-width: var(--measure); }
-.job li { margin-bottom: 6px; }
+.job li { margin-bottom: 7px; }
+.job li::marker { color: var(--gold); }
 
-/* Skills */
-.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px; }
-.skills h3 { font-size: 17px; margin: 0 0 6px; }
-.skills p { margin: 0; color: var(--muted); }
+/* Skills and credentials */
+.cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; }
+.cols h3 { font-size: 16px; margin: 0 0 8px; }
+.cols p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.creds { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--text); }
+.cred { padding: 24px 22px 6px 0; }
+.cred + .cred { padding-left: 22px; border-left: 1px solid var(--rule); }
+.cred .big { font-family: var(--display); font-size: 34px; line-height: 1; margin: 0 0 10px; }
+.cred p { margin: 0; font-size: 15px; color: var(--muted); }
 
-/* Credentials */
-.creds { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.cred { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 20px 22px; }
-.cred h3 { font-size: 17px; margin: 0 0 4px; }
-.cred p { margin: 0; color: var(--muted); font-size: 15px; }
+/* Closing */
+.closing { background: var(--ink); color: var(--frost); padding: 104px 0 56px; }
+.closing h2 { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 112px); line-height: .95; margin: 0 0 26px; color: #f6f3ec; }
+.closing h2 em { color: var(--gold); }
+.closing .lede { color: var(--frost-dim); max-width: 52ch; margin: 0 0 40px; font-size: 18px; }
+.reach { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 18px 48px; }
+.reach span { display: block; font-size: 13px; color: var(--frost-dim); margin-bottom: 2px; }
+.reach a { color: #f6f3ec; text-decoration-color: var(--gold); font-size: 17px; }
+.fine { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--ink-line); font-size: 13.5px; color: var(--frost-dim); }
 
-/* Contact */
-.contact { display: flex; flex-wrap: wrap; gap: 14px 36px; font-size: 18px; }
-.contact div span { display: block; color: var(--muted); font-size: 14px; font-weight: 500; }
-footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule); }
-footer p { max-width: var(--measure); margin: 0 0 6px; }
+/* One orchestrated load moment */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .hero .rule, .hero-grid { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero .rule { animation-delay: .15s; }
+  .hero-grid { animation-delay: .25s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .trace path.draw { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: draw 1.4s ease forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+}
 
-@media (max-width: 820px) {
-  nav { display: none; }
-  .two, .skills, .creds { grid-template-columns: 1fr; }
-  .job { grid-template-columns: 1fr; gap: 6px; }
-  .job .when span { display: inline; }
-  .job .when span + span::before { content: ", "; }
-  .project dl { grid-template-columns: 1fr; gap: 2px; }
-  .project dd { margin-bottom: 10px; }
+@media (max-width: 960px) {
+  .top nav { display: none; }
+  .hero-grid, .feature, .entry, .job { grid-template-columns: 1fr; gap: 18px; }
+  .trace { grid-template-columns: 1fr; gap: 24px; }
+  .trace svg { display: none; }
+  .cols, .creds { grid-template-columns: 1fr 1fr; }
+  .cred:nth-child(3) { padding-left: 0; border-left: 0; }
+  .reach { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
-  .wrap { padding: 0 16px; }
+  .wrap { padding: 0 18px; }
   body { font-size: 16px; }
-  .hero { padding-top: 44px; padding-bottom: 36px; }
-  .trace-head { padding: 16px; }
-  .trace thead { display: none; }
-  .trace tr { display: block; padding: 14px 16px; border-bottom: 1px solid var(--rule); }
-  .trace tr:last-child { border-bottom: 0; }
-  .trace td { display: block; padding: 0; border: 0; width: auto !important; }
-  .trace td.id { display: none; }
-  .trace td.req { margin-bottom: 4px; }
-  .trace td.ev a { white-space: normal; }
-  .project { padding: 20px; }
-  section.block { padding: 48px 0; }
+  .hero { padding-top: 56px; }
+  .hero h1 .l2 { padding-left: .3em; }
+  section.doc { padding: 68px 0; }
+  .cols, .creds, .reach { grid-template-columns: 1fr; }
+  .cred + .cred { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  .rl-body { padding: 18px; }
+  .board { padding-bottom: 72px; }
 }
 @media print {
-  header.top, .actions { display: none; }
-  body { background: #fff; font-size: 12pt; }
-  section.block { padding: 24px 0; }
-  .project, .trace, .cred { break-inside: avoid; }
+  .top, .cta, .hint, .run, .rl-tabs { display: none; }
+  .dark, .closing { background: #fff; color: #000; }
+  .redline .sop-after { display: block; }
+  .redline .flags { display: grid; }
 }
 </style>
 </head>
@@ -177,225 +219,305 @@ footer p { max-width: var(--measure); margin: 0 0 6px; }
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">Shubham Singh</a>
-    <nav aria-label="Sections">
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#credentials">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <a class="mark" href="#top">Shubham Singh</a>
+    <nav aria-label="Sections"><ul>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
   </div>
 </header>
 
 <main id="main">
-  <div class="wrap hero" id="top">
-    <h1>Shubham Singh</h1>
-    <p class="role">Senior Business Analyst for Medicaid and healthcare payer systems, building AI tools for compliance work</p>
-    <p class="intro">Five years turning state policy, vendor contracts and federal rules into requirements that systems can be built and tested against: across Medicaid modernization, pharmacy benefits and CMS reporting. PMP certified, with a master's in Business Analytics. Outside work, I build AI tools for the same problems and publish how well they actually perform.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:shubhamkrsingh0801@gmail.com">Email me</a>
-      <a class="btn secondary" href="https://www.linkedin.com/in/singhkumarshubham/">LinkedIn</a>
-      <a class="btn secondary" href="https://github.com/shubhamkumarsingh91-lgtm">GitHub</a>
-    </div>
-    <p class="meta">Montgomery, Alabama. Open to Senior Business Analyst and Business Systems Analyst roles in the US, remote or on-site.</p>
-
-    <div class="trace" role="region" aria-labelledby="trace-title">
-      <div class="trace-head">
-        <h2 id="trace-title">Requirements traceability, applied to me</h2>
-        <p>What a hiring manager needs to know, traced to the evidence.</p>
+  <div class="dark" id="top">
+    <div class="wrap hero">
+      <h1>Shubham<span class="l2">Singh</span></h1>
+      <div class="rule"></div>
+      <div class="hero-grid">
+        <p class="role">Senior Business Analyst for Medicaid and healthcare payer systems. I turn policy into requirements, and build AI that is tested before it is trusted.</p>
+        <div>
+          <p class="intro">Five years across Medicaid modernization, pharmacy benefits and CMS reporting, now at the Alabama Medicaid Agency. PMP certified, with a master's in Business Analytics from NC State.</p>
+          <div class="cta">
+            <a class="btn solid" href="mailto:shubhamkrsingh0801@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/singhkumarshubham/">LinkedIn</a>
+            <a class="btn" href="https://github.com/shubhamkumarsingh91-lgtm">GitHub</a>
+          </div>
+          <p class="where">Montgomery, Alabama. Open to Senior BA and BSA roles in the US.</p>
+        </div>
       </div>
-      <table>
-        <thead><tr><th scope="col">ID</th><th scope="col">Requirement</th><th scope="col">Evidence</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="id">R1</td>
-            <td class="req">Can run requirements on a large, multi-vendor state program</td>
-            <td class="ev">Own the traceability matrix from RFP to go-live on Alabama's AMMIS modularity program; reviewed 100+ deliverables across 6+ vendor and state teams. <a href="#experience">Experience</a></td>
-          </tr>
-          <tr>
-            <td class="id">R2</td>
-            <td class="req">Knows payer and pharmacy business rules</td>
-            <td class="ev">Wrote PBM rules for prior authorization, drug utilization review and therapeutic classes on New Mexico Medicaid's FlexRx platform at Conduent. <a href="#experience">Experience</a></td>
-          </tr>
-          <tr>
-            <td class="id">R3</td>
-            <td class="req">Turns data into reporting people trust</td>
-            <td class="ev">Built Power BI, Azure and Snowflake dashboards for CMS and federal reporting that cut turnaround by 25%. <a href="#experience">Experience</a></td>
-          </tr>
-          <tr>
-            <td class="id">R4</td>
-            <td class="req">Uses AI, and measures it honestly</td>
-            <td class="ev">Built a compliance agent tested against 18 hand-written and 4,000 generated cases; replaced the language model with rules where the tests showed it was unreliable. <a href="#projects">Projects</a></td>
-          </tr>
-        </tbody>
-      </table>
+    </div>
+
+    <div class="wrap board" role="region" aria-labelledby="board-title">
+      <h2 id="board-title">Every claim, traced to evidence.</h2>
+      <p class="sub">A requirements traceability matrix is how I prove a system does what was promised. Here is mine. Choose a requirement to see what backs it.</p>
+      <div class="trace" id="trace">
+        <svg id="threads" aria-hidden="true"></svg>
+        <ul class="reqs">
+          <li><button class="req" data-ev="e1 e6" aria-pressed="false"><span class="k">R1</span><span class="t">Runs requirements on large, multi-vendor state programs</span></button></li>
+          <li><button class="req" data-ev="e1 e2 e5" aria-pressed="false"><span class="k">R2</span><span class="t">Knows Medicaid and pharmacy business rules</span></button></li>
+          <li><button class="req" data-ev="e3 e6" aria-pressed="false"><span class="k">R3</span><span class="t">Turns data into reporting people trust</span></button></li>
+          <li><button class="req" data-ev="e4 e5 e6" aria-pressed="false"><span class="k">R4</span><span class="t">Builds with AI, and measures it honestly</span></button></li>
+        </ul>
+        <ul class="evs">
+          <li class="ev" id="e1"><h3>Alabama Medicaid Agency, AMMIS</h3><p>Own traceability from RFP to go-live; 100+ deliverables reviewed across 6+ vendor and state teams.</p></li>
+          <li class="ev" id="e2"><h3>Conduent, New Mexico FlexRx</h3><p>Wrote pharmacy benefit rules for prior authorization, drug utilization review and therapeutic classes.</p></li>
+          <li class="ev" id="e3"><h3>CMS reporting dashboards</h3><p>Power BI, Azure and Snowflake reporting for MAR, SUR and DUR; turnaround cut by 25%.</p></li>
+          <li class="ev" id="e4"><h3>Compliance AI Agent</h3><p>Tested on 18 hand-written and 4,000 generated cases; rules replaced the language model where it proved unreliable.</p></li>
+          <li class="ev" id="e5"><h3>Healthcare Claims Assistant</h3><p>Explains claim rejections to patients, providers and analysts from a structured rules knowledge base.</p></li>
+          <li class="ev" id="e6"><h3>MS Business Analytics, PMP</h3><p>NC State, AI focus, GPA 3.9. Project Management Professional.</p></li>
+        </ul>
+      </div>
+      <p class="hint">Six pieces of evidence behind four requirements. Details below.</p>
     </div>
   </div>
 
-  <section class="block" id="projects" aria-labelledby="projects-title">
+  <section class="doc" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <h2 id="projects-title">Projects</h2>
-      <p class="lede">Each project starts from a real problem in healthcare or finance operations, and each repository publishes its test results, including what failed.</p>
+      <h2 id="work-title">Selected projects</h2>
+      <p class="lede">Built outside work, on public and synthetic data, around problems I see in healthcare operations. Each repository publishes its test results, including what failed.</p>
 
-      <div class="projects">
-        <article class="project lead">
-          <h3>Compliance AI Agent: from policy change to updated procedure</h3>
-          <p class="stack">Python, rule engine, Qwen2.5-7B, FAISS, MCP server. In development.</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>When a Medicaid policy changes, someone has to find what changed, work out which internal procedures it affects, and rewrite them by hand. Misses surface later as audit findings.</dd>
-            <dt>What I built</dt>
-            <dd>An agent that compares policy versions, traces each change to the affected procedures, and drafts the edits as reviewable diffs. Nothing changes without a named approver, and every action is logged. It also runs as an MCP server for AI assistants.</dd>
-            <dt>Results</dt>
-            <dd>The first version, built on a language model, passed 6 of 10 test cases. A rule-based engine now passes all 10 development cases and all 8 blind cases, and 96.7% to 98.5% of checks across 200 generated policy manuals. Tested on one real CMS document pair (MITA 2.0 to 3.0).</dd>
+      <div class="feature">
+        <div>
+          <h3>Compliance AI Agent</h3>
+          <p class="stack">Python, rule engine, Qwen2.5-7B, FAISS, MCP server</p>
+          <dl class="facts">
+            <dt>The problem</dt>
+            <dd>When a Medicaid policy changes, someone must find what changed, work out which procedures it affects, and rewrite them by hand. Misses surface later as audit findings.</dd>
+            <dt>What it does</dt>
+            <dd>Compares policy versions, traces each change to the affected procedures, and drafts the edits as diffs with review flags. Nothing changes without a named approver, and every action is logged.</dd>
+            <dt>How well it works</dt>
+            <dd>The language-model version passed <span class="num">6 of 10</span> test cases. The rule engine that replaced it passes <span class="num">10 of 10</span> development and <span class="num">8 of 8</span> blind cases, and <span class="num">96.7%</span> to <span class="num">98.5%</span> of checks on 200 generated policy manuals.</dd>
           </dl>
-          <p class="links"><a href="https://github.com/shubhamkumarsingh91-lgtm/Compliance-AI">Code and results</a><a href="https://github.com/shubhamkumarsingh91-lgtm/Compliance-AI/blob/main/docs/Compliance_AI_Overview.pdf">Project overview (PDF)</a></p>
-        </article>
-
-        <div class="two">
-          <article class="project">
-            <h3>Healthcare Claims Assistant</h3>
-            <p class="stack">Python, RAG, Ollama, Qwen3 4B, Gemma</p>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Claim rejection codes mean little to patients and slow down providers and analysts.</dd>
-              <dt>What I built</dt>
-              <dd>A local assistant that explains a rejection three ways: plainly for patients, as a checklist for providers, and as a root-cause trace for analysts. Answers come from a structured knowledge base of rejection, eligibility, coding and authorization rules.</dd>
-            </dl>
-            <p class="links"><a href="https://github.com/shubhamkumarsingh91-lgtm/healthcare-translator-ai">Code</a></p>
-          </article>
-
-          <article class="project">
-            <h3>Value-Investing Screener</h3>
-            <p class="stack">Python, Streamlit, Gemini API</p>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Classic investing criteria are scattered and hard to apply consistently.</dd>
-              <dt>What I built</dt>
-              <dd>A screener that scores any stock against Buffett and Munger, Graham and Lynch criteria with plain-English pros and cons. A chat assistant answers only from the scoring engine, and screenshot import needs human review before anything is saved.</dd>
-            </dl>
-            <p class="links"><a href="https://github.com/shubhamkumarsingh91-lgtm/buffett-agent">Code</a></p>
-          </article>
+          <p class="links"><a href="https://github.com/shubhamkumarsingh91-lgtm/Compliance-AI">Code and test results</a><a href="https://github.com/shubhamkumarsingh91-lgtm/Compliance-AI/blob/main/docs/Compliance_AI_Overview.pdf">Project overview (PDF)</a></p>
         </div>
 
-        <article class="project">
-          <h3>AI Paper Trading Lab</h3>
-          <p class="stack">Python, XGBoost, LightGBM, Alpaca API, GitHub Actions</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>Can a self-learning model beat simply holding the S&amp;P 500, once it is measured honestly?</dd>
-            <dt>What I built</dt>
-            <dd>Three scheduled bots on simulated-money accounts: two intraday bots driven by a 54-feature model that retrains nightly on its own trade outcomes, behind fixed risk rules, and a daily strategy that switches between SPY and a sideways-market playbook.</dd>
-            <dt>Results</dt>
-            <dd>No live track record yet. The model shows only a small edge over chance, and the 200-day backtest showed none. The regime strategy beat SPY in a backtest (15.9% against 13.7% a year), which is likely an upper bound.</dd>
-          </dl>
-          <p class="links"><a href="https://github.com/shubhamkumarsingh91-lgtm/AI-Paper-Trading-Bot">Code and results</a><a href="https://github.com/shubhamkumarsingh91-lgtm/AI-Paper-Trading-Bot/blob/main/docs/ARCHITECTURE.md">Architecture</a></p>
-        </article>
+        <div class="redline" id="redline">
+          <div class="rl-tabs" role="tablist" aria-label="Example policy changes">
+            <button role="tab" id="tab-a" aria-selected="true" aria-controls="case-a">A threshold changes</button>
+            <button role="tab" id="tab-b" aria-selected="false" aria-controls="case-b" tabindex="-1">A requirement is dropped</button>
+          </div>
+          <div class="rl-body">
+            <div id="case-a" role="tabpanel" aria-labelledby="tab-a">
+              <p class="rl-step">Policy, new version</p>
+              <p class="rl-text rl-policy">Prior authorization is required after <del>15</del> <ins>20</ins> visits in a benefit year.</p>
+              <p class="rl-step">Front desk procedure</p>
+              <div class="rl-sop" aria-live="polite">
+                <p class="rl-text sop-before">Front desk staff verify the visit count against the 15-visit prior authorization threshold before scheduling.</p>
+                <p class="rl-text sop-after">Front desk staff verify the visit count against the <del>15</del><ins>20</ins>-visit prior authorization threshold before scheduling.</p>
+              </div>
+              <ul class="flags"><li>Verify: value changed from 15 to 20.</li><li>Telehealth and statements procedures checked and left alone.</li></ul>
+            </div>
+            <div id="case-b" role="tabpanel" aria-labelledby="tab-b" hidden>
+              <p class="rl-step">Policy, new version</p>
+              <p class="rl-text rl-policy">Providers must submit Form X electronically within 10 days. <ins>A paper copy is no longer required.</ins></p>
+              <p class="rl-step">Claim packet procedure</p>
+              <div class="rl-sop" aria-live="polite">
+                <p class="rl-text sop-before">Submit Form X electronically and mail a paper copy within 10 days of the date of service. Keep the mailing receipt in the claim file.</p>
+                <p class="rl-text sop-after">Submit Form X electronically <del>and mail a paper copy</del> within 10 days of the date of service. Keep the mailing receipt in the claim file.</p>
+              </div>
+              <ul class="flags"><li>Verify: a requirement was removed because the policy dropped it.</li><li>Verify: "Keep the mailing receipt" may depend on the removed requirement. Delete it if no longer needed.</li></ul>
+            </div>
+            <button class="run" id="run" aria-pressed="false">Show the agent's edit</button>
+            <p class="rl-note">Real output from the agent on the sample files in the repository. A person approves every change.</p>
+          </div>
+        </div>
       </div>
 
-      <p class="note">All projects are independent personal work, not tied to any employer or agency. They use public and synthetic data only: no internal data and no personal data (no SSNs or PHI). Trading projects use simulated money only and are not investment advice.</p>
+      <div class="index">
+        <article class="entry">
+          <div><h3>Healthcare Claims Assistant</h3><p class="stack">Python, RAG, Ollama, Qwen3 4B, Gemma</p></div>
+          <div>
+            <p>Claim rejection codes mean little to patients and slow down providers and analysts. This local assistant explains a rejection three ways: plainly for patients, as a checklist for providers, and as a root-cause trace for analysts, grounded in a knowledge base of rejection, eligibility, coding and authorization rules.</p>
+            <a href="https://github.com/shubhamkumarsingh91-lgtm/healthcare-translator-ai">Code</a>
+          </div>
+        </article>
+        <article class="entry">
+          <div><h3>AI Paper Trading Lab</h3><p class="stack">Python, XGBoost, LightGBM, Alpaca API, GitHub Actions</p></div>
+          <div>
+            <p>Can a self-learning model beat holding the S&amp;P 500, once it is measured honestly? Three scheduled bots on simulated-money accounts: two intraday bots with a 54-feature model that retrains nightly on its own trades, behind fixed risk rules, and a daily strategy that switches between SPY and a sideways-market playbook.</p>
+            <p class="result">So far: no live track record, only a small model edge over chance, and one backtest that beat SPY (15.9% against 13.7% a year), likely an upper bound.</p>
+            <a href="https://github.com/shubhamkumarsingh91-lgtm/AI-Paper-Trading-Bot">Code and results</a>
+          </div>
+        </article>
+        <article class="entry">
+          <div><h3>Value-Investing Screener</h3><p class="stack">Python, Streamlit, Gemini API</p></div>
+          <div>
+            <p>Scores any stock against Buffett and Munger, Graham and Lynch criteria with plain-English pros and cons. A chat assistant answers only from the scoring engine, and screenshot import needs human review before anything is saved.</p>
+            <a href="https://github.com/shubhamkumarsingh91-lgtm/buffett-agent">Code</a>
+          </div>
+        </article>
+      </div>
+      <p class="disclaimer">All projects are independent personal work, not tied to any employer or agency. They use public and synthetic data only: no internal data and no personal data (no SSNs or PHI). Trading projects use simulated money and are not investment advice.</p>
     </div>
   </section>
 
-  <section class="block" id="experience" aria-labelledby="experience-title">
+  <section class="doc" id="experience" aria-labelledby="exp-title">
     <div class="wrap">
-      <h2 id="experience-title">Experience</h2>
-
-      <div class="job">
-        <p class="when"><span>Aug 2024 to present</span><span>Montgomery, AL</span></p>
-        <div>
-          <h3>Senior Business Analyst</h3>
-          <p class="org">Alabama Medicaid Agency, AMMIS modularity program</p>
-          <ul>
-            <li>Bridge state business owners, the system integrator and module vendors, improving system interoperability and scalability by 40%.</li>
-            <li>Own requirements traceability from RFP through go-live; reviewed 100+ deliverables across 6+ vendor and state teams.</li>
-            <li>Lead functional and document analysis for the CPMS module, turning procurement needs into RFP language and supporting contract requirement drafting.</li>
-            <li>Partner with the agency's AI team on program integrity and fraud detection, defining guardrails that keep PHI out of AI-facing systems.</li>
-            <li>Built Power BI, Azure and Snowflake dashboards that cut turnaround for CMS and federal reporting (MAR, SUR, DUR) by 25%.</li>
-            <li>Drove 95% on-time closure of action items across Change Control Board design sessions; mentor newer analysts.</li>
-            <li>Act as agency liaison between ServiceNow and Optum's Jira environment for incidents, changes, requests and defects.</li>
-          </ul>
+      <h2 id="exp-title">Experience</h2>
+      <p class="lede">Eight years of analysis, the last five in Medicaid and payer systems.</p>
+      <div class="jobs">
+        <div class="job">
+          <p class="when">2024 to now<span>Aug 2024 to present, Montgomery, AL</span></p>
+          <div>
+            <h3>Senior Business Analyst</h3>
+            <p class="org">Alabama Medicaid Agency, AMMIS modularity program</p>
+            <ul>
+              <li>Bridge state business owners, the system integrator and module vendors, improving system interoperability and scalability by 40%.</li>
+              <li>Own requirements traceability from RFP through go-live; reviewed 100+ deliverables across 6+ vendor and state teams.</li>
+              <li>Lead functional and document analysis for the CPMS module, turning procurement needs into RFP language and supporting contract requirement drafting.</li>
+              <li>Partner with the agency's AI team on program integrity and fraud detection, defining guardrails that keep PHI out of AI-facing systems.</li>
+              <li>Built Power BI, Azure and Snowflake dashboards that cut turnaround for CMS and federal reporting (MAR, SUR, DUR) by 25%.</li>
+              <li>Drove 95% on-time closure of action items across Change Control Board design sessions; mentor newer analysts.</li>
+              <li>Liaison between ServiceNow and Optum's Jira environment for incidents, changes, requests and defects.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="job">
-        <p class="when"><span>Apr 2023 to Jun 2024</span><span>Atlanta, GA</span></p>
-        <div>
-          <h3>Business Systems Analyst</h3>
-          <p class="org">Conduent, New Mexico Medicaid pharmacy benefits (FlexRx)</p>
-          <ul>
-            <li>Integrated legacy PBM systems into the FlexRx platform, improving operational efficiency by 40%.</li>
-            <li>Wrote PBM business rules for provider, member, therapeutic class, managed care, prior authorization and DUR, turning state pharmacy policy into configurable claim logic.</li>
-            <li>Led gap analysis and source-to-target mapping, cutting downstream development errors by 25%.</li>
-            <li>Designed UAT test cases and triaged defects across adjudication scenarios, contributing to a 20% performance gain at go-live.</li>
-            <li>Managed the Azure DevOps backlog across Agile sprints and waterfall releases.</li>
-          </ul>
+        <div class="job">
+          <p class="when">2023 to 2024<span>Apr 2023 to Jun 2024, Atlanta, GA</span></p>
+          <div>
+            <h3>Business Systems Analyst</h3>
+            <p class="org">Conduent, New Mexico Medicaid pharmacy benefits (FlexRx)</p>
+            <ul>
+              <li>Integrated legacy PBM systems into the FlexRx platform, improving operational efficiency by 40%.</li>
+              <li>Wrote PBM business rules for provider, member, therapeutic class, managed care, prior authorization and DUR, turning state pharmacy policy into configurable claim logic.</li>
+              <li>Led gap analysis and source-to-target mapping, cutting downstream development errors by 25%.</li>
+              <li>Designed UAT test cases and triaged defects across adjudication scenarios, contributing to a 20% performance gain at go-live.</li>
+              <li>Managed the Azure DevOps backlog across Agile sprints and waterfall releases.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="job">
-        <p class="when"><span>Jun 2018 to Jul 2020</span><span>Bangalore, India</span></p>
-        <div>
-          <h3>Business Analyst</h3>
-          <p class="org">Dufins Solutions</p>
-          <ul>
-            <li>Designed a MySQL data warehouse and daily Tableau dashboards for product leadership.</li>
-            <li>Launched A/B testing that helped raise app user retention by 15%.</li>
-            <li>Standardized reporting and built Excel macros, cutting report turnaround by 35%.</li>
-            <li>Consolidated overlapping product features through capability analysis, reducing development cost by 25%.</li>
-          </ul>
+        <div class="job">
+          <p class="when">2018 to 2020<span>Jun 2018 to Jul 2020, Bangalore</span></p>
+          <div>
+            <h3>Business Analyst</h3>
+            <p class="org">Dufins Solutions</p>
+            <ul>
+              <li>Designed a MySQL data warehouse and daily Tableau dashboards for product leadership.</li>
+              <li>Launched A/B testing that helped raise app user retention by 15%.</li>
+              <li>Standardized reporting and built Excel macros, cutting report turnaround by 35%.</li>
+              <li>Consolidated overlapping product features through capability analysis, reducing development cost by 25%.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="skills" aria-labelledby="skills-title">
+  <section class="doc" id="skills" aria-labelledby="skills-title">
     <div class="wrap">
-      <h2 id="skills-title">Skills</h2>
+      <h2 id="skills-title">Skills and credentials</h2>
       <p class="lede">Grouped by the work they support.</p>
-      <div class="skills">
-        <div><h3>Business analysis</h3><p>Requirements elicitation, BRD, FRD and DSD, requirements traceability, gap analysis, RFP and contract support, UAT, process mapping</p></div>
-        <div><h3>Healthcare and payer</h3><p>Medicaid, Medicare, MMIS and AMMIS, pharmacy benefits (PBM), prior authorization and DUR, HIPAA, CMS reporting</p></div>
-        <div><h3>Data and AI</h3><p>SQL, Python, Power BI, Tableau, Snowflake, Azure, generative AI and LLMs, RAG, XGBoost, evaluation and testing of AI systems</p></div>
-        <div><h3>Delivery</h3><p>Agile, Scrum and SAFe, waterfall, Azure DevOps, Jira, ServiceNow, change control, organizational change management</p></div>
+      <div class="cols">
+        <div><h3>Business analysis</h3><p>Requirements elicitation, BRD, FRD and DSD, traceability, gap analysis, RFP and contract support, UAT, process mapping</p></div>
+        <div><h3>Healthcare and payer</h3><p>Medicaid, Medicare, MMIS and AMMIS, pharmacy benefits, prior authorization and DUR, HIPAA, CMS reporting</p></div>
+        <div><h3>Data and AI</h3><p>SQL, Python, Power BI, Tableau, Snowflake, Azure, LLMs, RAG, XGBoost, testing AI systems</p></div>
+        <div><h3>Delivery</h3><p>Agile, Scrum and SAFe, waterfall, Azure DevOps, Jira, ServiceNow, change control, change management</p></div>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="credentials" aria-labelledby="cred-title">
-    <div class="wrap">
-      <h2 id="cred-title">Education and credentials</h2>
-      <p class="lede">Formal training behind the analysis and the AI work.</p>
       <div class="creds">
-        <div class="cred"><h3>MS, Business Analytics (AI focus)</h3><p>North Carolina State University. GPA 3.9.</p></div>
-        <div class="cred"><h3>Project Management Professional (PMP)</h3><p>Project Management Institute. Active.</p></div>
-        <div class="cred"><h3>IBM Data Science Practitioner</h3><p>Applied statistics, Python and data analysis.</p></div>
-        <div class="cred"><h3>Published research</h3><p>Two peer-reviewed papers in IRJET on predicting gold stock prices with hybrid and hidden Markov models.</p></div>
+        <div class="cred"><p class="big">MS</p><p>Business Analytics, AI focus. North Carolina State University. GPA 3.9.</p></div>
+        <div class="cred"><p class="big">PMP</p><p>Project Management Professional, Project Management Institute. Active.</p></div>
+        <div class="cred"><p class="big">IBM</p><p>Data Science Practitioner: applied statistics, Python and data analysis.</p></div>
+        <div class="cred"><p class="big">2 papers</p><p>Peer-reviewed in IRJET, on predicting gold prices with hybrid and hidden Markov models.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="contact" aria-labelledby="contact-title">
+  <section class="closing" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <h2 id="contact-title">Contact</h2>
-      <p class="lede">The fastest way to reach me is email.</p>
-      <div class="contact">
+      <h2 id="contact-title">Let's build something <em>traceable.</em></h2>
+      <p class="lede">I'm looking for Senior Business Analyst and Business Systems Analyst roles in healthcare and government programs. Email is the fastest way to reach me.</p>
+      <div class="reach">
         <div><span>Email</span><a href="mailto:shubhamkrsingh0801@gmail.com">shubhamkrsingh0801@gmail.com</a></div>
         <div><span>Phone</span><a href="tel:+19842681351">+1 (984) 268-1351</a></div>
         <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/singhkumarshubham/">singhkumarshubham</a></div>
         <div><span>GitHub</span><a href="https://github.com/shubhamkumarsingh91-lgtm">shubhamkumarsingh91-lgtm</a></div>
       </div>
+      <p class="fine">Shubham Singh, 2026. Views and projects here are my own and not affiliated with any employer or agency.</p>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>Shubham Singh, 2026. Views and projects here are my own and not affiliated with any employer or agency.</p>
-  </div>
-</footer>
+<script>
+(() => {
+  // Trace board: gold threads from each requirement to its evidence
+  const trace = document.getElementById('trace');
+  const svg = document.getElementById('threads');
+  const reqs = [...trace.querySelectorAll('.req')];
+  const NS = 'http://www.w3.org/2000/svg';
+  let firstDraw = true, active = null;
+
+  function draw() {
+    if (getComputedStyle(svg).display === 'none') return;
+    const box = trace.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+    svg.replaceChildren();
+    reqs.forEach((r, i) => {
+      const a = r.getBoundingClientRect();
+      const x1 = a.right - box.left, y1 = a.top + a.height / 2 - box.top;
+      r.dataset.ev.split(' ').forEach((id, j) => {
+        const e = document.getElementById(id).getBoundingClientRect();
+        const x2 = e.left - box.left, y2 = e.top + e.height / 2 - box.top;
+        const mid = (x2 - x1) * 0.5;
+        const p = document.createElementNS(NS, 'path');
+        p.setAttribute('d', `M${x1},${y1} C${x1 + mid},${y1} ${x2 - mid},${y2} ${x2},${y2}`);
+        p.dataset.req = i;
+        svg.appendChild(p);
+        if (firstDraw) {
+          p.style.setProperty('--len', p.getTotalLength());
+          p.style.animationDelay = (0.5 + i * 0.28 + j * 0.1) + 's';
+          p.classList.add('draw');
+        }
+      });
+    });
+    firstDraw = false;
+    paint();
+  }
+
+  function paint() {
+    trace.classList.toggle('focused', active !== null);
+    svg.querySelectorAll('path').forEach(p => p.classList.toggle('on', String(active) === p.dataset.req));
+    const on = active === null ? [] : reqs[active].dataset.ev.split(' ');
+    trace.querySelectorAll('.ev').forEach(e => e.classList.toggle('on', on.includes(e.id)));
+    reqs.forEach((r, i) => r.setAttribute('aria-pressed', String(i === active)));
+  }
+  const hover = () => matchMedia('(hover: hover)').matches;
+  reqs.forEach((r, i) => {
+    r.addEventListener('click', () => { active = hover() ? i : (active === i ? null : i); paint(); });
+    r.addEventListener('mouseenter', () => { if (hover()) { active = i; paint(); } });
+  });
+  trace.addEventListener('mouseleave', () => { if (hover()) { active = null; paint(); } });
+
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw); else draw();
+
+  // Redline demo: tabs and the "show the edit" toggle
+  const redline = document.getElementById('redline');
+  const run = document.getElementById('run');
+  const tabs = [...redline.querySelectorAll('[role="tab"]')];
+  function select(tab) {
+    tabs.forEach(x => {
+      const on = x === tab;
+      x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+    redline.classList.remove('shown'); run.setAttribute('aria-pressed', 'false'); run.textContent = "Show the agent's edit";
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+      select(n); n.focus();
+    });
+  });
+  run.addEventListener('click', () => {
+    const shown = redline.classList.toggle('shown');
+    run.setAttribute('aria-pressed', String(shown));
+    run.textContent = shown ? 'Show the original' : "Show the agent's edit";
+  });
+})();
+</script>
 </body>
 </html>
