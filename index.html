@@ -31,6 +31,12 @@
   --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
+/* Bodoni's display cut has hairlines that break up on standard-resolution screens.
+   Below the giant hero name, use its sturdier text cut and a slightly heavier weight. */
+.mark, .board h2, .req .k, .doc h2, .feature h3, .entry h3, .job .when, .cred .big, .closing h2 {
+  font-optical-sizing: none; font-variation-settings: "opsz" 11;
+}
+.hero h1 { font-optical-sizing: none; font-variation-settings: "opsz" 20; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 70px; }
 body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
@@ -72,7 +78,7 @@ a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; 
 
 /* ---------- The trace board ---------- */
 .board { position: relative; padding-top: 56px; padding-bottom: 96px; }
-.board h2 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; margin: 0 0 10px; color: #f6f3ec; }
+.board h2 { font-family: var(--display); font-weight: 500; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; margin: 0 0 10px; color: #f6f3ec; }
 .board .sub { color: var(--frost-dim); margin: 0 0 40px; max-width: 58ch; }
 .trace { position: relative; display: grid; grid-template-columns: 1fr 1.25fr; gap: 0 140px; }
 .trace svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
@@ -100,7 +106,7 @@ a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; 
 /* ---------- Light document body ---------- */
 section.doc { padding: 96px 0; }
 section.doc + section.doc { border-top: 1px solid var(--rule); }
-.doc h2 { font-family: var(--display); font-weight: 400; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.04; margin: 0 0 14px; letter-spacing: -.01em; }
+.doc h2 { font-family: var(--display); font-weight: 500; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.04; margin: 0 0 14px; letter-spacing: -.01em; }
 .doc .lede { color: var(--muted); max-width: var(--measure); margin: 0 0 48px; font-size: 18px; }
 
 /* Featured project with live redline */
@@ -110,7 +116,7 @@ section.doc + section.doc { border-top: 1px solid var(--rule); }
 .facts { margin: 0; }
 .facts dt { font-weight: 700; font-size: 15px; margin-top: 16px; }
 .facts dd { margin: 4px 0 0; max-width: var(--measure); }
-.facts .num { font-family: var(--display); font-size: 1.15em; }
+.facts .num { font-weight: 700; }
 .links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px 22px; }
 .links a { font-weight: 600; color: var(--pine); font-size: 15px; }
 
@@ -163,12 +169,12 @@ ins { color: var(--ins); background: var(--ins-bg); text-decoration: none; paddi
 .creds { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--text); }
 .cred { padding: 24px 22px 6px 0; }
 .cred + .cred { padding-left: 22px; border-left: 1px solid var(--rule); }
-.cred .big { font-family: var(--display); font-size: 34px; line-height: 1; margin: 0 0 10px; }
+.cred .big { font-family: var(--display); font-weight: 500; font-size: 34px; line-height: 1; margin: 0 0 10px; }
 .cred p { margin: 0; font-size: 15px; color: var(--muted); }
 
 /* Closing */
 .closing { background: var(--ink); color: var(--frost); padding: 104px 0 56px; }
-.closing h2 { font-family: var(--display); font-weight: 400; font-size: clamp(52px, 8vw, 112px); line-height: .95; margin: 0 0 26px; color: #f6f3ec; }
+.closing h2 { font-family: var(--display); font-weight: 500; font-size: clamp(52px, 8vw, 112px); line-height: .95; margin: 0 0 26px; color: #f6f3ec; }
 .closing h2 em { color: var(--gold); }
 .closing .lede { color: var(--frost-dim); max-width: 52ch; margin: 0 0 40px; font-size: 18px; }
 .reach { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 18px 48px; }
